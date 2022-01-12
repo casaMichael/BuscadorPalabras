@@ -1,0 +1,69 @@
+/*#fondo {
+    background-image: url("/fondo.jpg") ;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 100%;
+}
+.tabla_datos{
+    background: lightsalmon;
+    border: black double 5px;
+    width: 10%;
+    height: 100px;
+}*/
+body {
+    background-color: darkgray;
+}
+
+img {
+    width: 200px;
+    height: auto;
+    margin-left: 150px;
+}
+#fondo {
+    width: 40%;
+    margin-left: 4%;
+    background-color: lightslategrey;
+    border: 5px solid whitesmoke;
+    border-radius: 5px;
+}
+
+#equipo {
+    color: blue;
+    font-size: larger;
+    position: absolute;
+}
+
+#error{
+    color: salmon;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#nombre{
+    color: red;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.form {
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+ #caja_busqueda {
+     width: 200px;
+     height: 25px;
+     background: lightgoldenrodyellow;
+     border: none;
+     font-size: 11pt;
+     float: left;
+     color: darkslategray;
+     padding-left: 10px;
+     border-radius: 5px;
+     margin-left: 7px;
+ }
+
+ #caja_busqueda:hover {
+     background: white;
+ }
+
