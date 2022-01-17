@@ -1,8 +1,8 @@
 <?php
 
 $mysqli = new mysqli("localhost", "root", "", "nba");
-if ($mysqli->connect_errno){
-    die("Fallo la conexión:(".$mysqli -> mysqli_connect_errno().")".$mysqli->mysqli_connect_error());
+if ($mysqli->connect_errno) {
+    die("Fallo la conexión:(" . $mysqli->mysqli_connect_errno() . ")" . $mysqli->mysqli_connect_error());
 }
 
 // VALORES INICIALES
@@ -26,10 +26,10 @@ if ($resultado->num_rows > 0) {
         $salida .= "<tr>
                         <td>" . $fila['Nombre'] . "</td>                
                 </tr> ";
-        }
-        $salida.="</table>";
-    } else {
-        $salida.="<div id='error'>¡No hay datos que mostrar!</div>";
     }
+    $salida .= "</table>";
+} else {
+    $salida .= "<div id='error'>¡No hay datos que mostrar!</div>";
+}
 
 echo $salida;
