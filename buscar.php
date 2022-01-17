@@ -19,14 +19,12 @@ $resultado = $mysqli->query($query);
 if ($resultado->num_rows > 0) {
     $salida .= "<table class='tabla_datos'>
                         <tr>
-                            <td id='nombre'>Nombre del Equipo</td>
-                            
+                            <td id='nombre'>Nombre del Equipo</td>                            
                         </tr> ";
 
     while ($fila = $resultado->fetch_assoc()) {
         $salida .= "<tr>
-                        <td>" . $fila['Nombre'] . "</td>
-                        
+                        <td>" . $fila['Nombre'] . "</td>                
                 </tr> ";
         }
         $salida.="</table>";

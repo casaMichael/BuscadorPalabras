@@ -10,7 +10,6 @@ function buscar_datos(consulta){
         .done(function (respuesta) {
             $("#datos").html(respuesta);
         })
-
 }
 
 $(document).on('keyup','#caja_busqueda', function (){
