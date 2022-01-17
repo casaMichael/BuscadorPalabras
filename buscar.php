@@ -7,29 +7,31 @@ if ($mysqli->connect_errno) {
 
 // VALORES INICIALES
 $salida = "";
-$query = "SELECT * FROM equipos ORDER BY Nombre";
+$query = ""; //Consulta vacía
 
+//Si existe palabra ejecutara todo esto
 if (isset($_POST['consulta'])) {
     $q = $_POST['consulta'];
     $query = "SELECT * FROM equipos WHERE Nombre LIKE '%" . $q . "%'";
-}
 
-$resultado = $mysqli->query($query);
+    $resultado = $mysqli->query($query);
 
-if ($resultado->num_rows > 0) {
-    $salida .= "<table class='tabla_datos'>
+    if ($resultado->num_rows > 0) {
+        $salida .= "<table class='tabla_datos'>
                         <tr>
                             <td id='nombre'>Nombre del Equipo</td>                            
                         </tr> ";
 
-    while ($fila = $resultado->fetch_assoc()) {
-        $salida .= "<tr>
+        while ($fila = $resultado->fetch_assoc()) {
+            $salida .= "<tr>
                         <td>" . $fila['Nombre'] . "</td>                
                 </tr> ";
+        }
+        $salida .= "</table>";
+    } else {
+        $salida .= "<div id='error'>¡No hay datos que mostrar!</div>";
     }
-    $salida .= "</table>";
-} else {
-    $salida .= "<div id='error'>¡No hay datos que mostrar!</div>";
 }
 
+//Hasta aquí
 echo $salida;
